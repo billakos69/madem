@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Υπολογιστής BMI</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- Chart.js library -->
+</head>
+<body>
+    <div class="container">
+        <h1>Υπολογιστής Δείκτη Μάζας Σώματος</h1>
+        <form id="bmiForm">
+            <label for="age">Ηλικία:</label>
+            <input type="number" id="age" required>
+
+            <label for="height">Ύψος (cm):</label>
+            <input type="number" id="height" required>
+
+            <label for="weight">Βάρος (kg):</label>
+            <input type="number" id="weight" required>
+
+            <label for="gender">Φύλο:</label>
+            <select id="gender">
+                <option value="male">Άνδρας</option>
+                <option value="female">Γυναίκα</option>
+            </select>
+            
+            <button type="submit">Υπολογισμός BMI</button>
+        </form>
+
+        <div id="result"></div>
+        <div id="tip"></div>
+
+        <button id="infoBtn" style="display: none;">Περισσότερες Πληροφορίες</button>
+
+        <div id="bmiChartContainer">
+            <canvas id="bmiChart"></canvas> <!-- Chart.js canvas for BMI graph -->
+        </div>
+    </div>
+
+    <!-- Modal για τις πληροφορίες -->
+    <div id="infoModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Πληροφορίες για το BMI</h2>
+            <p id="infoText"></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
